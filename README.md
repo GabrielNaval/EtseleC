@@ -1,2 +1,3 @@
 # EtseleC
-For software design. Platformer
+For Software Design.
+A Platformer.
