@@ -1,5 +1,5 @@
 # EtseleC
-For Software Design. A Platformer.
+For Software Design. A Boss Rush Platformer.
 ## What we want to have in the game:
 * Sprites
   * Player
@@ -9,7 +9,7 @@ For Software Design. A Platformer.
 * Movement
   * Dashing
   * Wall Jumping
-  * Wall Hanging (limied wall hanging time)
+  * Wall Hanging (limited wall hanging time)
   * Sliding along walls reduces fall speed
 * Player Weapon
   * Just a shooting thing?
