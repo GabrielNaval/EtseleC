@@ -20,7 +20,6 @@ For Software Design. A Boss Rush Platformer.
   * Boss takes a lot of hits
 * States
   * Pause Menu
-  * Checkpoints 
   * Victory Screen
 * SFX/Music
 
