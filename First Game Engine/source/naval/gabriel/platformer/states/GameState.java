@@ -8,31 +8,22 @@ import naval.gabriel.platformer.Game;
 import naval.gabriel.platformer.entities.Entity;
 import naval.gabriel.platformer.entities.Player;
 import naval.gabriel.platformer.world.Tile;
+import naval.gabriel.platformer.world.World;
 import naval.gabriel.platformer.rendering.textures.*;
 
 public class GameState implements State{
 
 	private ArrayList<Entity> entities;
 	private ArrayList<Tile> tiles;
+	private World world;
 	
 	@Override
 	public void init() {
 		// TODO Auto-generated method stub
 		entities = new ArrayList<Entity>();
 		tiles = new ArrayList<Tile>();
-		tiles.add(new Tile(200, 200, new Sprite(new SpriteSheet(new Texture("terrain"), 32), 1, 1)));
-        tiles.add(new Tile(100, 480 - 32 - 32, new Sprite(new SpriteSheet(new Texture("terrain"), 32), 1, 1)));
-        tiles.add(new Tile(400, 50, new Sprite(new SpriteSheet(new Texture("terrain"), 32), 1, 1)));
-        tiles.add(new Tile(300, 300, new Sprite(new SpriteSheet(new Texture("terrain"), 32), 1, 1)));
-        tiles.add(new Tile(320 - 32, 300, new Sprite(new SpriteSheet(new Texture("terrain"), 32), 1, 1)));
-		new Player(new Sprite("test"), 100, 100, this);
-		float x = 0;
-		float y = Game.HEIGHT - 32;
-		for(int i = 0; i < 10; i++) {
-			tiles.add(new Tile(x,y, new Sprite(new SpriteSheet(new Texture("terrain"), 32), 1, 1)));
-			x+=70;
-		}
-		
+		//new Player(new Sprite("test"), 100, 100, this);
+		world = new World("level1", this);
 	}
 
 	@Override
@@ -80,6 +71,10 @@ public class GameState implements State{
 	
 	public ArrayList<Tile> getTiles() {
 		return tiles;
+	}
+	
+	public void addTile(Tile tile) {
+		tiles.add(tile);
 	}
 
 }

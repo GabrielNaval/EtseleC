@@ -4,20 +4,35 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.util.HashMap;
+import java.util.Map;
 
 import naval.gabriel.platformer.rendering.textures.Sprite;
+import naval.gabriel.platformer.rendering.textures.SpriteSheet;
+import naval.gabriel.platformer.rendering.textures.Texture;
 
 public class Tile {
 
-	protected float x, y;
+	private static final SpriteSheet terrain = new SpriteSheet(new Texture("terrain"), 32);
+	private static final Map<Integer, Tile> tileMap = new HashMap<Integer, Tile>();
+	protected int x, y;
 	protected Sprite sprite; 
 	protected boolean solid;
+	protected int id;
 	
-	public Tile(float x, float y, Sprite sprite) {
-		super();
-		this.x = x;
-		this.y = y;
+	public static final Tile tile1 = new Tile(0xFFFFFFFF, new Sprite(terrain, 1, 1));
+	public static final Tile tile2 = new Tile(0xFFFF0000, new Sprite(terrain, 1, 2));
+	
+	private Tile(int id, Sprite sprite) {
+		this.id = id;
 		this.sprite = sprite;
+		tileMap.put(id,this);
+	}
+	
+	public Tile(int id, int x, int y) {
+		this.sprite = getFromID(id).sprite;
+		this.x = x*sprite.getWidth();
+		this.y = y*sprite.getHeight();	
 		this.solid = true;
 	} 
 	
@@ -57,4 +72,8 @@ public class Tile {
                 sprite.getHeight() - 6);
     }
 	
+    public static Tile getFromID(int id) {
+    		return tileMap.get(id);
+    }
+    
 }
