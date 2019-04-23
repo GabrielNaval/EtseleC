@@ -16,7 +16,8 @@ For Software Design. A Boss Rush Platformer.
 * Bosses
   * Attack Patterns
 * HUD
-  * Player HP and Boss HP?
+  * Player - 1 HKO
+  * Boss takes a lot of hits
 * States
   * Pause Menu
   * Checkpoints 
