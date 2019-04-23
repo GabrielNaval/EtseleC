@@ -65,7 +65,7 @@ public class Game extends Canvas implements Runnable{
 		g2d.translate(-6, -28);
 		//////////////// Draw Stuff //////////////// 
 		
-		g2d.setColor(Color.RED);
+		g2d.setColor(Color.BLACK);
 		g2d.fillRect(0,0, WIDTH, HEIGHT);
 		
 		stateManager.render(g2d);
