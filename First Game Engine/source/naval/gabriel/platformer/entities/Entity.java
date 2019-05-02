@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
-import naval.gabriel.platformer.rendering.textures.Sprite;
+import naval.gabriel.platformer.rendering.textures.Texture;
 import naval.gabriel.platformer.states.GameState;
 
 /* Entity
@@ -15,12 +15,12 @@ import naval.gabriel.platformer.states.GameState;
 public abstract class Entity {
 
 	protected double x, y;
-	protected Sprite sprite;
+	protected Texture texture;
 	protected GameState state;
 	 
 	
-	public Entity(Sprite sprite, double x, double y, GameState state) {
-		this.sprite = sprite;
+	public Entity(Texture texture, double x, double y, GameState state) {
+		this.texture = texture;
 		this.x = x;
 		this.y = y;
 		this.state= state;
@@ -30,7 +30,7 @@ public abstract class Entity {
 	public abstract void tick();
 	
 	public void render(Graphics2D g) {
-		sprite.render(g, x, y);
+		texture.render(g, x, y);
 		g.setColor(Color.RED);
 		g.draw(getTop());
 		g.setColor(Color.BLUE);
@@ -42,27 +42,28 @@ public abstract class Entity {
 	}
 	
 	public Rectangle getBounds() {
-        return new Rectangle((int) x, (int) y, sprite.getWidth(),
-                sprite.getHeight());
+        return new Rectangle((int) x, (int) y, texture.getWidth(),
+                texture.getHeight());
     }
 
     public Rectangle getTop() {
-        return new Rectangle((int) x + 6, (int) y, sprite.getWidth() - 6, 4);
+        return new Rectangle((int) x + 6, (int) y, texture.getWidth() - 6, 4);
     }
 
     public Rectangle getBottom() {
-        return new Rectangle((int) x + 6, (int)y + sprite.getHeight() - 4,
-                sprite.getWidth() - 6, 4);
+        return new Rectangle((int) x + 6, (int)y + texture.getHeight() - 4,
+                texture.getWidth() - 6, 4);
     }
 
     public Rectangle getRight() {
-        return new Rectangle((int) x + sprite.getWidth() - 4, (int) y + 6, 4,
-                sprite.getHeight() - 6);
+        return new Rectangle((int) x + texture.getWidth() - 4, (int) y + 6, 4,
+                texture.getHeight() - 6);
     }
 
     public Rectangle getLeft() {
         return new Rectangle((int) x, (int) y + 6, 4,
-                sprite.getHeight() - 6);
+                texture.getHeight() - 6);
     }
+	
 	
 }

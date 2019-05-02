@@ -1,9 +1,9 @@
 package naval.gabriel.platformer.entities;
 
-import java.awt.event.KeyEvent;
+import java.awt.event.KeyEvent; 
 
 import naval.gabriel.platformer.input.KeyInput;
-import naval.gabriel.platformer.rendering.textures.Sprite;
+import naval.gabriel.platformer.rendering.textures.Texture;
 import naval.gabriel.platformer.states.GameState;
 
 /* The Actual Player	
@@ -11,8 +11,8 @@ import naval.gabriel.platformer.states.GameState;
  */
 public class Player extends Mob{
 
-	public Player(Sprite sprite, double x, double y, GameState state) {
-		super(sprite, x, y, state);
+	public Player(Texture texture, double x, double y, GameState state) {
+		super(texture, x, y, state);
 		// TODO Auto-generated constructor stub
 	}
 	

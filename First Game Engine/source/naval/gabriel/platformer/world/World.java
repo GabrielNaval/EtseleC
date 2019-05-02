@@ -1,13 +1,13 @@
 package naval.gabriel.platformer.world;
 
-import java.awt.image.BufferedImage;
+import java.awt.image.BufferedImage; 
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
 import naval.gabriel.platformer.entities.Player;
-import naval.gabriel.platformer.rendering.textures.Sprite;
+import naval.gabriel.platformer.rendering.textures.Texture;
 import naval.gabriel.platformer.states.GameState;
 
 public class World {
@@ -33,9 +33,9 @@ public class World {
 			for(int x = 0; x < width; x++) {
 				int id = pixels[x + y * width];
 				if(id == 0xFF0000FF)
-					new Player(new Sprite("player"), x*32, y * 32, state);
+					new Player(new Texture("player"), x*32, y * 32, state);
 				else if(Tile.getFromID(id) != null)
-					state.addTile(new Tile(id, x, y ));
+					state.addTile(new Tile(id, x, y));
 			}
 		}
 	}

@@ -1,6 +1,6 @@
 package naval.gabriel.platformer;
 
-import java.awt.Canvas;
+import java.awt.Canvas; 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -13,8 +13,6 @@ import javax.swing.JFrame;
 
 import naval.gabriel.platformer.input.KeyInput;
 import naval.gabriel.platformer.input.MouseInput;
-import naval.gabriel.platformer.rendering.textures.Sprite;
-import naval.gabriel.platformer.rendering.textures.SpriteSheet;
 import naval.gabriel.platformer.rendering.textures.Texture;
 import naval.gabriel.platformer.states.GameState;
 import naval.gabriel.platformer.states.MenuState;

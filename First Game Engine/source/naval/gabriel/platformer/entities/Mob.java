@@ -1,6 +1,6 @@
 package naval.gabriel.platformer.entities;
 
-import naval.gabriel.platformer.rendering.textures.Sprite;
+import naval.gabriel.platformer.rendering.textures.Texture;
 import naval.gabriel.platformer.states.GameState;
 import naval.gabriel.platformer.world.Tile;
 
@@ -16,8 +16,8 @@ public class Mob extends Entity{
 	protected boolean falling = true;
 	protected boolean canJump;
 	
-	public Mob(Sprite sprite, double x, double y, GameState state) {
-		super(sprite, x, y, state);
+	public Mob(Texture texture, double x, double y, GameState state) {
+		super(texture, x, y, state);
 		gravity = 0.5; 
 		maxDY = 7;
 		// TODO Auto-generated constructor stub
@@ -39,7 +39,7 @@ public class Mob extends Entity{
             if (getBottom().intersects(t.getTop()) && dy > 0) {
                 canJump = true;
                 falling = false;
-            	dy = 0;
+                dy = 0;
                 return true;
             }else falling = true;
             if (getBounds().intersects(t.getBottom()) && dy < 0) {
